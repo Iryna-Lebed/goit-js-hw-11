@@ -27,20 +27,19 @@ form.addEventListener("submit", async (e) => {
   clearGallery();
   showLoader();
 
-  // Відображаємо повідомлення про завантаження
-  loadingToastId = iziToast.info({
-    title: "Loading",
-    message: "Loading images, please wait...",
-    position: "topRight",
-    timeout: false, // залишається поки не закриємо
-    close: false,   // без кнопки закриття
-  });
+
+  // loadingToastId = iziToast.info({
+  //   title: "Loading",
+  //   message: "Loading images, please wait...",
+ 
+  //   timeout: false, 
+  //   close: false,
+  // });
 
   try {
     const data = await getImagesByQuery(query);
 
-    // Закриваємо повідомлення про завантаження
-    iziToast.destroy(); // або iziToast.close(loadingToastId);
+   
 
     if (data.hits.length === 0) {
       iziToast.info({
@@ -56,7 +55,7 @@ form.addEventListener("submit", async (e) => {
     form.reset();
 
   } catch (error) {
-    iziToast.destroy();
+    
 
     iziToast.error({
       title: "Error",

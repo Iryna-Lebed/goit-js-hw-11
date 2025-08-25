@@ -122,3 +122,24 @@ letter-spacing: 0.04em;
 color: #2e2f42;   
 }
 
+
+.loader {
+  display: block;
+  margin: 20px auto;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0077cc;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: blink 1.5s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.4;
+  }
+}
