@@ -5,7 +5,7 @@ import { getImagesByQuery } from "./js/pixabay-api.js";
 import { createGallery, clearGallery, showLoader, hideLoader } from "./js/render-functions.js";
 
 const form = document.querySelector(".form");
-let loadingToastId; // зберігаємо id для закриття
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -28,13 +28,7 @@ form.addEventListener("submit", async (e) => {
   showLoader();
 
 
-  // loadingToastId = iziToast.info({
-  //   title: "Loading",
-  //   message: "Loading images, please wait...",
- 
-  //   timeout: false, 
-  //   close: false,
-  // });
+
 
   try {
     const data = await getImagesByQuery(query);
